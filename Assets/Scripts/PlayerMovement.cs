@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         _movement = new Vector3(_horizontalMovement, 0.0f, _verticalMovement);
         _movement.Normalize();
         _movement *= _speed;
-        _movement.y = _rb.velocity.y;
+        _movement.y = _rb.linearVelocity.y;
         if (_rb != null)
         {
             _rb.linearVelocity = _movement;
