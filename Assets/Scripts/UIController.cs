@@ -4,6 +4,11 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _scoreText;
+    [SerializeField] private TMP_Text _timerText;
+    [SerializeField] private Player_Collect _playerCollect;
+    public GameObject VictoryPanel;
+    public GameObject DefeatPanel;
+    public GameObject StartPanel;
 
     // Fonction appelé à chaque activation du monobehaviour
     private void OnEnable()
@@ -21,10 +26,44 @@ public class UIController : MonoBehaviour
     private void Start()
     {
         UpdateScore(0);
+        VictoryPanel.SetActive(false);
+        DefeatPanel.SetActive(false);
     }
 
     public void UpdateScore(int newScore)
     {
-        _scoreText.text = $"Score : {newScore.ToString()}";
+        _scoreText.text = $"Objets : {newScore.ToString()} / 5";
+    }
+    
+    public void UpdateTimer(float newTimer)
+    {
+        int minutes = Mathf.FloorToInt(_playerCollect.timer / 60);
+        int seconds = Mathf.FloorToInt(_playerCollect.timer % 61);
+        _timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void ShowVictory()
+    {
+        VictoryPanel.SetActive(true);
+    }
+
+    public void ClickStart()
+    {
+        UpdateScore(0);
+        StartPanel.SetActive(false);
+        DefeatPanel.SetActive(false);
+        _playerCollect.gameStarted = true;
+        Debug.Log("game started");
+    }
+    
+    public void QuitGame()
+    {
+        Debug.Log("QuitGame called");
+        Application.Quit();
+    }
+
+    public void ShowDefeat()
+    {
+        DefeatPanel.SetActive(true);
     }
 }    

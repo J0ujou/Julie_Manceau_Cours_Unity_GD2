@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _GrappinDirection;
     private Vector3 _GrappinHit;
     [SerializeField] private float _speed = 2f;
+    private bool _isGrounded;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,8 +49,14 @@ public class PlayerMovement : MonoBehaviour
             ThrowGrappin();
         }
         
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _rb.AddForce(Vector3.up*500);
+        }
+        
         
     }
+    
 
     private void GrappinUpdateDirection(Vector3 direction)
     {
