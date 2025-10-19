@@ -1,8 +1,11 @@
 # Julie_Manceau_Cours_Unity_GD2
-cours et exercices UNITY
-///////
+
+Cours et exercices UNITY
+
 // Exercice Roll a Ball pour le 5 Novembre 2025 //
+
 Nom du projet: "Roll’n’Find"
+
 Présentation du projet:
   
   Dans ce jeu, le joueur contrôle une petite boule se déplaçant à travers un labyrinthe.
