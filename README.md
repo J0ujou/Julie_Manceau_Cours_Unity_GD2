@@ -27,4 +27,10 @@ Intention:
   - un level design avec un labyrinthe très simplifié, différent selon les niveaux
   - des cohérences sur les couleurs/matières/lumières
 Compte-rendu par jour:
+///////_18/10_///////
+- j'ai modifié l'affichage de la récupération de point et modifié le code pour avoir une limite. Pour l'instant j'ai laissé le nombre de collectible à prendre à 5.
+- Quand le max est récupéré le widget de victoire s'affiche (il n'y a que un fond avec victory) et j'ai aussi instancié les autres widgets (sans m'appliquer sur l'esthétique): game over, start: ils ont des boutons, pour l'instant seul le commencer, recommencer et quitter fonctionnent. J'ai fais en sorte que quand on recommence, tout est remis à 0 (points et compte à rebours)
+- J'ai ajouté un compte à rebours et le j'ai affiché. Il se lance quans je commence la partie. Pour l'instant il est à 60 secondes. Si il arrive à 0 avant d'avoir récupéré les 5 collectibles, le widget game over s'affiche
+- j'ai essayé d'ajouter un système de saut au personnage mais il saute sans limite, à régler à la prochaine session
+ 
 Compte-rendu final: 
