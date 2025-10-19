@@ -4,10 +4,13 @@ cours et exercices UNITY
 // Exercice Roll a Ball pour le 5 Novembre 2025 //
 Nom du projet: "Roll’n’Find"
 Présentation du projet:
+  
   Dans ce jeu, le joueur contrôle une petite boule se déplaçant à travers un labyrinthe.
   L’objectif est de collecter tous les objets disséminés dans le niveau avant la fin du temps imparti.
   Les objets sont visibles au départ, mais deviennent invisibles après quelques secondes, obligeant le joueur à mémoriser leur emplacement pour tous les récupérer.
+
 Intention:
+  
   Le jeu doit présenter:
   - 2/3 niveaux différents
   - une balle mobile
@@ -26,7 +29,9 @@ Intention:
   - un menu settings pour réglage du son
   - un level design avec un labyrinthe très simplifié, différent selon les niveaux
   - des cohérences sur les couleurs/matières/lumières
+
 Compte-rendu par jour:
+
 ///////_18/10_///////
 - j'ai modifié l'affichage de la récupération de point et modifié le code pour avoir une limite. Pour l'instant j'ai laissé le nombre de collectible à prendre à 5.
 - Quand le max est récupéré le widget de victoire s'affiche (il n'y a que un fond avec victory) et j'ai aussi instancié les autres widgets (sans m'appliquer sur l'esthétique): game over, start: ils ont des boutons, pour l'instant seul le commencer, recommencer et quitter fonctionnent. J'ai fais en sorte que quand on recommence, tout est remis à 0 (points et compte à rebours)
