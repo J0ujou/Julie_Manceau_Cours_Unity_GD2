@@ -40,5 +40,12 @@ Compte-rendu par jour:
 - Quand le max est récupéré le widget de victoire s'affiche (il n'y a que un fond avec victory) et j'ai aussi instancié les autres widgets (sans m'appliquer sur l'esthétique): game over, start: ils ont des boutons, pour l'instant seul le commencer, recommencer et quitter fonctionnent. J'ai fais en sorte que quand on recommence, tout est remis à 0 (points et compte à rebours)
 - J'ai ajouté un compte à rebours et le j'ai affiché. Il se lance quans je commence la partie. Pour l'instant il est à 60 secondes. Si il arrive à 0 avant d'avoir récupéré les 5 collectibles, le widget game over s'affiche
 - j'ai essayé d'ajouter un système de saut au personnage mais il saute sans limite, à régler à la prochaine session
+
+///////_19/10_///////
+- j'ai réglé le système de saut en vérifiant si la boule touche le sol
+- j'ai ajouté un système où tous les collectibles (qui se nomment maintenant Fragment) disparaissent 5 sec après lancement du jeu (temps de memorisation à modifier si il est trop court)
+- j'ai créé un malus qui ralenti la boule pendant 5 sec, pareil pour le bonus (ils peuvent etre ramassés)
+- au lieu de faire spawn des murs, un bonus spawn quand je ramasse un fragment mais l'effet du bonus ne s'applique pas (problème avec référence préfab: je demande de lancer un caroutine mais il ne se lance pas car la référence de player movement dans mon bonus c'est le prefab player, et comme un prefab n'est pas actif cela ne marche pas) --> problème à régler
+- j'ai commencé la mise en place du second collectible: la clé pour activer la zone de mémorisation ( pour l'instant elle s'appelle target hard mais j'ai séparé son score data avec celui des fragments --> à continuer car l'affichage reste encore associé aux fragments
  
 Compte-rendu final: 
