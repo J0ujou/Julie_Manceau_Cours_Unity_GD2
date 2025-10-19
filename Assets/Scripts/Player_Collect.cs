@@ -26,12 +26,19 @@ public class Player_Collect : MonoBehaviour
     }
   }
 
+  public void UpdateScorekey(int value)
+  {
+    _scoreData.NbKey = Mathf.Clamp(_scoreData.ScoreValue + value, 0, 1);
+    //_uiController.UpdateScore(_scoreData.ScoreValue);
+    // Call event dispatcher, en C# on invoke avec l'input entre parenthèses
+    OntargetCollected?.Invoke(_scoreData.NbKey);
+  }
+
   private void Update()
   {
     if (gameStarted)
     {
       timer -= Time.deltaTime;
-      Debug.Log("Timer : " + timer);
       _uiController.UpdateTimer(timer);
 
       if (timer <= 0f)

@@ -9,7 +9,7 @@ public class Target_Hard : MonoBehaviour
     {
       if (other.gameObject.GetComponent<Player_Collect>() != null)
       {
-          other.gameObject.GetComponent<Player_Collect>().UpdateScore(_targetValue);
+          other.gameObject.GetComponent<Player_Collect>().UpdateScorekey(_targetValue);
           Destroy(gameObject);
       }
     }

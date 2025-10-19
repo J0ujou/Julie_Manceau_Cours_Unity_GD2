@@ -1,21 +1,27 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody _rb;
+    [SerializeField] GameObject _ground;
     private float _horizontalMovement;
     private float _verticalMovement;
     private Vector3 _movement;
     private Vector3 _GrappinDirection;
     private Vector3 _GrappinHit;
     [SerializeField] private float _speed = 2f;
+    [SerializeField] GameObject _targetBonus;
+    private Target_Bonus BonusScript;
     private bool _isGrounded;
+    //[SerializeField] private float timer = 5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        //BonusScript = _targetBonus.GetComponent<Target_Bonus>();
    
 
     }
@@ -49,14 +55,61 @@ public class PlayerMovement : MonoBehaviour
             ThrowGrappin();
         }
         
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            _rb.AddForce(Vector3.up*500);
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
+        { 
+                _rb.AddForce(Vector3.up*500);
         }
-        
-        
+
+        /*if (BonusScript.BonusActivated)
+        {
+            timer -= Time.deltaTime;
+            _speed = 5f;
+            if (timer <= 0f)
+            {
+                BonusScript.BonusActivated = false;
+                _speed = 2f;
+            }
+        }*/
+    }
+
+    public void ActivateBonus(float duration = 5f)
+    {
+        StartCoroutine(SpeedBoost(duration));
+    }
+
+    private IEnumerator SpeedBoost(float duration)
+    {
+        _speed = 5f;
+        yield return new WaitForSeconds(duration);
+        _speed = 2f;
     }
     
+    public void ActivateMalus(float duration = 5f)
+    {
+        StartCoroutine(SpeedDBoost(duration));
+    }
+
+    private IEnumerator SpeedDBoost(float duration)
+    {
+        _speed = 0.5f;
+        yield return new WaitForSeconds(duration);
+        _speed = 2f;
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (_ground)
+        {
+            _isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (_ground)
+        {
+            _isGrounded = false;
+        }
+    }
 
     private void GrappinUpdateDirection(Vector3 direction)
     {

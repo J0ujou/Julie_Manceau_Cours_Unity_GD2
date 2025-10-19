@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class Target_Soft : MonoBehaviour
+public class Target_Fragment : MonoBehaviour
 { 
     [SerializeField] private int _targetValue = 1;
-    [SerializeField] private float _shadowDuration = 3f;
+    [SerializeField] private float _shadowDuration = 5f;
     [SerializeField] private GameObject _particuleEffect;
+    [SerializeField] private Player_Collect _playerCollect;
     private float _shadowTimer = 0;
     private bool _isInShadows = false;
     private void OnTriggerEnter(Collider other)
@@ -20,19 +21,25 @@ public class Target_Soft : MonoBehaviour
             //TODO: Start Timer
             //_isInShadows = true;
             //Instantiate(_particuleEffect, transform.position, Quaternion.identity);
-            StartCoroutine(ShadowTimerControl());
+         // StartCoroutine(ShadowTimerControl());
         }
     }
-
-    private void ToggleVisibility(bool newVisibility= true)
+    
+   private void ToggleVisibility(bool newVisibility= true)
     {
         GetComponent<MeshRenderer>().enabled = newVisibility;
         GetComponent<Collider>().enabled = newVisibility;
     }
+    
+    private void Hide(bool newVisibility = true)
+    { 
+        GetComponent<MeshRenderer>().enabled = newVisibility;
+    }
+    
     //TODO: Timer by deltatime
-    /*private void Update()
+    private void Update()
     {
-        if(_isInShadows)
+       /*f(_isInShadows)
         {
             _shadowTimer += Time.deltaTime;
             if (_shadowTimer >= _shadowDuration)
@@ -43,15 +50,19 @@ public class Target_Soft : MonoBehaviour
                 _shadowTimer = 0f;
                 _isInShadows = false;
             }
-        }
-    }*/
+        }*/
+       if (_playerCollect.gameStarted)
+       {
+               StartCoroutine(ShadowTimerControl());
+       }   
+    }
     
     
     //TODO: timer by coroutine
     private IEnumerator ShadowTimerControl()
     {
         yield return new WaitForSeconds(_shadowDuration);
-        ToggleVisibility(true);
+        Hide(false);
     }
     
 }

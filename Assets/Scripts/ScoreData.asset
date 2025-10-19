@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ScoreData
   m_EditorClassIdentifier: 
   ScoreValue: 0
+  NbKey: 0
