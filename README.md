@@ -47,5 +47,11 @@ Compte-rendu par jour:
 - j'ai créé un malus qui ralenti la boule pendant 5 sec, pareil pour le bonus (ils peuvent etre ramassés)
 - au lieu de faire spawn des murs, un bonus spawn quand je ramasse un fragment mais l'effet du bonus ne s'applique pas (problème avec référence préfab: je demande de lancer un caroutine mais il ne se lance pas car la référence de player movement dans mon bonus c'est le prefab player, et comme un prefab n'est pas actif cela ne marche pas) --> problème à régler
 - j'ai commencé la mise en place du second collectible: la clé pour activer la zone de mémorisation ( pour l'instant elle s'appelle target hard mais j'ai séparé son score data avec celui des fragments --> à continuer car l'affichage reste encore associé aux fragments
+
+///////_20/10_///////
+- j'ai arrangé l'affichage de la clé (second collectible)
+- il doit permettre l'utilisation de la zone bénéfique, alors je l'ai créer, il faut faire la fin du code (j'ai juste fait les conditions)
+- j'ai créé la défaite environnementale (manque fin script)
+- je n'ai pas encore réglé le probleme d'apparition du bonus fonctionnel après récupération du fragment (manque de temps) --> voir à prochaine session
  
 Compte-rendu final: 
