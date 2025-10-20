@@ -2,7 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Target_Hard : MonoBehaviour
+public class Target_Key : MonoBehaviour
 {
     [SerializeField] private int _targetValue = 1;
     private void OnCollisionEnter(Collision other)

@@ -5,6 +5,7 @@ public class Player_Collect : MonoBehaviour
 {
   [SerializeField] private ScoreDatas _scoreData;
   [SerializeField] private UIController _uiController;
+  [SerializeField] Memory_Zone _memoryZone;
   public int maxScore = 5;
   public float timer = 60f;
   public bool gameStarted=false;
@@ -12,6 +13,7 @@ public class Player_Collect : MonoBehaviour
   
   // Definition de l'action (event dispatcher), avec l'input entre <> ici un int
   public static Action<int> OntargetCollected;
+  public static Action<int> OnkeyCollected;
   public void UpdateScore(int value)
   {
     _scoreData.ScoreValue = Mathf. Clamp(_scoreData.ScoreValue + value, 0, 5);
@@ -28,10 +30,14 @@ public class Player_Collect : MonoBehaviour
 
   public void UpdateScorekey(int value)
   {
-    _scoreData.NbKey = Mathf.Clamp(_scoreData.ScoreValue + value, 0, 1);
+    _scoreData.NbKey = Mathf.Clamp(_scoreData.NbKey + value, 0, 1);
     //_uiController.UpdateScore(_scoreData.ScoreValue);
     // Call event dispatcher, en C# on invoke avec l'input entre parenthèses
-    OntargetCollected?.Invoke(_scoreData.NbKey);
+    OnkeyCollected?.Invoke(_scoreData.NbKey);
+    if (_scoreData.NbKey >= maxScore)
+    {
+      _memoryZone.keycollected = true;
+    }
   }
 
   private void Update()
