@@ -5,6 +5,10 @@ public class Target_Bonus : MonoBehaviour
     public bool BonusActivated = false;
     [SerializeField] PlayerMovement _playerMovement;
 
+    void Start()
+    {
+        _playerMovement = Object.FindFirstObjectByType<PlayerMovement>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Player_Collect>() != null)

@@ -124,4 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BonusActivated: 0
-  _playerMovement: {fileID: 0}
+  _playerMovement: {fileID: 3081071135952515182, guid: 1fe0a7afb1ac4a647bcdb19e918e8499, type: 3}

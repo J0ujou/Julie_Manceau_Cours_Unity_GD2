@@ -7,6 +7,7 @@ public class Poison_Zone : MonoBehaviour
    {
       if (other.gameObject.GetComponent<Player_Collect>() != null)
       {
+         Debug.Log("Collided");
          _uiController.ShowDefeat();
       }
    }

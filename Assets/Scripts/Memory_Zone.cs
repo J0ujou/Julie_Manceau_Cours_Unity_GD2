@@ -1,16 +1,31 @@
-using Unity.VisualScripting;
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class Memory_Zone : MonoBehaviour
 {
+    [SerializeField] private Target_Fragment[] _targetFragment;
     public bool keycollected = false;
+    public bool zone = false;
+    
+    //void Start()
+    //{
+       // _targetFragment[] = FindObjectsOfType<Target_Fragment>();
+    //}
 
-    void OncollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Player_Collect>()!= null && keycollected == true)
         {
-            Debug.Log("ZONE");
-            //TO DO: appeller une fonction dans target fragment qui reaffiche tout les target fragment pendant 5 sec
+            Target_Fragment[] _targetFragment = FindObjectsOfType<Target_Fragment>();
+            foreach (var _targetFragment in _targetFragment)
+            {
+                zone = true;
+                _targetFragment.Hide(true);
+                Debug.Log("ZONE");
+            }
+
+            //_targetFragment.ShadowTimerControl();
         }
     }
 }   

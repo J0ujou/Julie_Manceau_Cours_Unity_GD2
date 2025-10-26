@@ -54,6 +54,7 @@ public class UIController : MonoBehaviour
     public void ShowVictory()
     {
         VictoryPanel.SetActive(true);
+        //TO DO: bloquer les mouvements du joueur
     }
 
     public void ClickStart()
@@ -74,5 +75,7 @@ public class UIController : MonoBehaviour
     public void ShowDefeat()
     {
         DefeatPanel.SetActive(true);
+        _playerCollect.gameStarted = false;
+        //TO DO: Bloquer les mouvements du joueur
     }
 }    
