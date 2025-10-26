@@ -1855,10 +1855,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7005593641775587536, guid: e9ddb39be2353ae4fabeea30bb31e578, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7297976548680122382, guid: e9ddb39be2353ae4fabeea30bb31e578, type: 3}
       propertyPath: m_Name
       value: Memory_Zone
@@ -1866,29 +1862,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7297976548680122382, guid: e9ddb39be2353ae4fabeea30bb31e578, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 893642000145298651}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ddb39be2353ae4fabeea30bb31e578, type: 3}
---- !u!1 &893642000145298650 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7297976548680122382, guid: e9ddb39be2353ae4fabeea30bb31e578, type: 3}
-  m_PrefabInstance: {fileID: 893642000145298649}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &893642000145298651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893642000145298650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da04d8a53a2274c48817e179d38b3c6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keycollected: 0
 --- !u!1001 &1304459979330845676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1997,6 +1972,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1522853814792008077, guid: ff70e6e5617f36045b9b7975020082e1, type: 3}
+      propertyPath: _memoryZone
+      value: 
+      objectReference: {fileID: 9172811283596087939, guid: e9ddb39be2353ae4fabeea30bb31e578, type: 3}
     - target: {fileID: 5721842368160989269, guid: ff70e6e5617f36045b9b7975020082e1, type: 3}
       propertyPath: m_Name
       value: Target_Key
