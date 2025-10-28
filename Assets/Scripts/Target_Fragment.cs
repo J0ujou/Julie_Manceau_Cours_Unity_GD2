@@ -24,6 +24,7 @@ public class Target_Fragment : MonoBehaviour
             //_isInShadows = true;
             //Instantiate(_particuleEffect, transform.position, Quaternion.identity);
          // StartCoroutine(ShadowTimerControl());
+         
         }
     }
     

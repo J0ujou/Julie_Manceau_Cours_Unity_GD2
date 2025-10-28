@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Text _timerText;
     [SerializeField] private TMP_Text _keyText;
     [SerializeField] private Player_Collect _playerCollect;
+    //[SerializeField] private SoundButton _soundButton;
     public GameObject VictoryPanel;
     public GameObject DefeatPanel;
     public GameObject StartPanel;
@@ -78,4 +80,14 @@ public class UIController : MonoBehaviour
         _playerCollect.gameStarted = false;
         //TO DO: Bloquer les mouvements du joueur
     }
+
+	public void NextLevel()
+	{
+        SceneManager.LoadScene("Level_2");
+    }
+
+    //public void PlaySound(sound)
+    //{
+        //PlaySound(sound);
+    //}
 }    
