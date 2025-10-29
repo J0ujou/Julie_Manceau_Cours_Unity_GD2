@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 public class Memory_Zone : MonoBehaviour
@@ -7,25 +6,44 @@ public class Memory_Zone : MonoBehaviour
     [SerializeField] private Target_Fragment[] _targetFragment;
     public bool keycollected = false;
     public bool zone = false;
+	private float Timer =5f;
     
-    //void Start()
-    //{
-       // _targetFragment[] = FindObjectsOfType<Target_Fragment>();
-    //}
+    void Update()
+    {
+		if(zone==true)
+		{
+			Timer -= Time.deltaTime;
+			if (Timer<=0f)
+			{
+			zone= false;
+			}
+		}
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Player_Collect>()!= null && keycollected == true)
         {
+			zone = true;
+			Debug.Log("ZONE");
+			
             //Target_Fragment[] _targetFragment = FindObjectsOfType<Target_Fragment>();
             //foreach (var _targetFragment in _targetFragment)
             //{
-                //zone = true;
+                
                 //_targetFragment.Hide(true);
-                //Debug.Log("ZONE");
+                
             //}
 
             //_targetFragment.ShadowTimerControl();
         }
     }
+	
+	void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.GetComponent<Player_Collect>()!= null && keycollected == true)
+		{
+			zone= false;
+		}
+	}
 }   

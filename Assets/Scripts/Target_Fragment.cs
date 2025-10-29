@@ -8,10 +8,16 @@ public class Target_Fragment : MonoBehaviour
     [SerializeField] private float _shadowDuration = 5f;
     [SerializeField] private GameObject _particuleEffect;
     [SerializeField] private Player_Collect _playerCollect;
-    [SerializeField] private Memory_Zone _memoryZone;
-    private float _shadowTimer = 0;
+    [SerializeField] Memory_Zone _memoryZone;
+    private float _shadowTimer = 5f;
     private bool _isInShadows = false;
     private bool HasDoOnce = false;
+
+	void Start()
+	{
+		_memoryZone = FindFirstObjectByType<Memory_Zone>();
+	}
+
     private void OnTriggerEnter(Collider other)
     { 
         if (other.gameObject.GetComponent<Player_Collect>() != null)
@@ -43,33 +49,16 @@ public class Target_Fragment : MonoBehaviour
     //TODO: Timer by deltatime
     private void Update()
     {
-       /*f(_isInShadows)
-        {
-            _shadowTimer += Time.deltaTime;
-            if (_shadowTimer >= _shadowDuration)
-            {
-                //TODO: Show Target
-                ToggleVisibility(true);
-                // TODO: Stop Timer
-                _shadowTimer = 0f;
-                _isInShadows = false;
-            }
-        }*/
-       if (_playerCollect.gameStarted)
+       if (_playerCollect.gameStarted && !HasDoOnce)
        {
                StartCoroutine(ShadowTimerControl());
        }
 
-       //if (_memoryZone.zone == true)
+       if (_memoryZone.zone == true)
        {
-           //if (!HasDoOnce)
-           {
-               //Hide(true);
-               //Debug.Log("KK");
-               //HasDoOnce = true;
-           }
-               
+           Hide(true);
        }
+       
     }
     
     
