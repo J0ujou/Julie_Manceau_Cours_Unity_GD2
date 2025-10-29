@@ -8,7 +8,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Text _timerText;
     [SerializeField] private TMP_Text _keyText;
     [SerializeField] private Player_Collect _playerCollect;
-    //[SerializeField] private SoundButton _soundButton;
+    [SerializeField] MusicManager musicSource;
     public GameObject VictoryPanel;
     public GameObject DefeatPanel;
     public GameObject StartPanel;
@@ -57,6 +57,7 @@ public class UIController : MonoBehaviour
     {
         VictoryPanel.SetActive(true);
         //TO DO: bloquer les mouvements du joueur
+        musicSource.PlayVictoryMusic();
     }
 
     public void ClickStart()
@@ -79,6 +80,7 @@ public class UIController : MonoBehaviour
         DefeatPanel.SetActive(true);
         _playerCollect.gameStarted = false;
         //TO DO: Bloquer les mouvements du joueur
+        musicSource.PlayGameOverMusic();
     }
 
 	public void NextLevel()

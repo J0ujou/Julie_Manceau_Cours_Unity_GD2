@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _GrappinHit;
     [SerializeField] private float _speed = 2f;
     [SerializeField] GameObject _targetBonus;
+    [SerializeField] MusicManager sfxSource;
     private Target_Bonus BonusScript;
     private bool _isGrounded;
     //[SerializeField] private float timer = 5f;
@@ -58,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
         { 
                 _rb.AddForce(Vector3.up*500);
+                sfxSource.PlayJumpSound();
         }
 
         /*if (BonusScript.BonusActivated)

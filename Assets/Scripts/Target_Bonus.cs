@@ -4,10 +4,12 @@ public class Target_Bonus : MonoBehaviour
 {
     public bool BonusActivated = false;
     [SerializeField] PlayerMovement _playerMovement;
+	[SerializeField] MusicManager sfxSource;
 
     void Start()
     {
         _playerMovement = Object.FindFirstObjectByType<PlayerMovement>();
+		sfxSource = Object.FindFirstObjectByType<MusicManager>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +19,7 @@ public class Target_Bonus : MonoBehaviour
             BonusActivated = true;
             _playerMovement.ActivateBonus();
             Debug.Log("Bonus activated");
+			sfxSource.PlayBonusSound();
         }
     }
     

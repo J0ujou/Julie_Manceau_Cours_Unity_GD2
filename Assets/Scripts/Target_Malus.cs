@@ -4,6 +4,7 @@ public class Target_Malus : MonoBehaviour
 {
     public bool MalusActivated = false;
     [SerializeField] PlayerMovement _playerMovement;
+    [SerializeField] MusicManager sfxSource;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,7 @@ public class Target_Malus : MonoBehaviour
             MalusActivated = true;
             _playerMovement.ActivateMalus();
             Debug.Log("Malus activated");
+            sfxSource.PlayMalusSound();
         }
     }
     

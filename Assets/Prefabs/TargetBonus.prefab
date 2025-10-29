@@ -125,3 +125,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BonusActivated: 0
   _playerMovement: {fileID: 3081071135952515182, guid: 1fe0a7afb1ac4a647bcdb19e918e8499, type: 3}
+  sfxSource: {fileID: 2389561805410680357, guid: 990c208c4e8674b2481db33aa681035d, type: 3}

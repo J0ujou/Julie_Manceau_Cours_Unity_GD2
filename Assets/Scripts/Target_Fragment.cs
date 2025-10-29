@@ -9,13 +9,16 @@ public class Target_Fragment : MonoBehaviour
     [SerializeField] private GameObject _particuleEffect;
     [SerializeField] private Player_Collect _playerCollect;
     [SerializeField] Memory_Zone _memoryZone;
+    [SerializeField] MusicManager sfxSource;
     private float _shadowTimer = 5f;
     private bool _isInShadows = false;
     private bool HasDoOnce = false;
+    private bool HasDoOnce2 = false;
 
 	void Start()
 	{
 		_memoryZone = FindFirstObjectByType<Memory_Zone>();
+        sfxSource = FindFirstObjectByType<MusicManager>();
 	}
 
     private void OnTriggerEnter(Collider other)
@@ -30,7 +33,8 @@ public class Target_Fragment : MonoBehaviour
             //_isInShadows = true;
             //Instantiate(_particuleEffect, transform.position, Quaternion.identity);
          // StartCoroutine(ShadowTimerControl());
-         
+            sfxSource.PlayPickupFragmentSound();
+
         }
     }
     
@@ -53,11 +57,23 @@ public class Target_Fragment : MonoBehaviour
        {
                StartCoroutine(ShadowTimerControl());
        }
-
-       if (_memoryZone.zone == true)
+       
+       if (_memoryZone.nbenter >=1)
        {
-           Hide(true);
+           if (_memoryZone.zone == true)
+           {
+               Hide(true);
+           }
+           else
+           {
+               Hide(false);
+           }
        }
+       
+       //if (_memoryZone.outofzone== true)
+       //{
+           //Hide(false);
+       //}
        
     }
     
