@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed = 2f;
     [SerializeField] GameObject _targetBonus;
     [SerializeField] MusicManager sfxSource;
+	[SerializeField] Player_Collect _playerCollect;
     private Target_Bonus BonusScript;
     private bool _isGrounded;
     //[SerializeField] private float timer = 5f;
@@ -30,13 +31,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _horizontalMovement = Input.GetAxis("Horizontal");
-        _verticalMovement = Input.GetAxis("Vertical");
-        _movement = new Vector3(_horizontalMovement, 0.0f, _verticalMovement);
-        GrappinUpdateDirection(_movement);// Mise à jour de la direction de tir du grappin
-        _movement.Normalize();
-        _movement *= _speed;
-        _movement.y = _rb.linearVelocity.y;
+		if (_playerCollect.gameStarted)
+        {
+			_horizontalMovement = Input.GetAxis("Horizontal");
+        	_verticalMovement = Input.GetAxis("Vertical");
+        	_movement = new Vector3(_horizontalMovement, 0.0f, _verticalMovement);
+        	GrappinUpdateDirection(_movement);// Mise à jour de la direction de tir du grappin
+        	_movement.Normalize();
+        	_movement *= _speed;
+        	_movement.y = _rb.linearVelocity.y;
+		}
+		else
+		{
+		 _movement = Vector3.zero;
+        _rb.linearVelocity = Vector3.zero;
+        _rb.angularVelocity = Vector3.zero;
+		}
+
         if (_rb != null)
         {
             _rb.linearVelocity = _movement;
@@ -56,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
             ThrowGrappin();
         }
         
-        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded && _playerCollect.gameStarted)
         { 
                 _rb.AddForce(Vector3.up*500);
                 sfxSource.PlayJumpSound();
@@ -136,4 +147,6 @@ public class PlayerMovement : MonoBehaviour
        transform.position = _GrappinHit;
        _GrappinDirection= Vector3.zero;
     }
+
+
 }

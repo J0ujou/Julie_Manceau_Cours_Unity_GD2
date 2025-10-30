@@ -63,10 +63,17 @@ public class UIController : MonoBehaviour
     public void ClickStart()
     {
         UpdateScore(0);
+		UpdateScorekey(0);
+        musicSource.PlayGameMusic();
         StartPanel.SetActive(false);
         DefeatPanel.SetActive(false);
         _playerCollect.gameStarted = true;
         Debug.Log("game started");
+    }
+	
+	public void ResetGame()
+    {
+        SceneManager.LoadScene("Level_1");
     }
     
     public void QuitGame()
@@ -88,8 +95,5 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene("Level_2");
     }
 
-    //public void PlaySound(sound)
-    //{
-        //PlaySound(sound);
-    //}
+   
 }    

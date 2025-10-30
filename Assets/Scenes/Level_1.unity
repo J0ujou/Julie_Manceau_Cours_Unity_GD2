@@ -2237,6 +2237,10 @@ PrefabInstance:
       propertyPath: _targetBonus
       value: 
       objectReference: {fileID: 184623764814550078, guid: 2c4cccf1cc5ab604e865462248d2339f, type: 3}
+    - target: {fileID: 3081071135952515182, guid: 1fe0a7afb1ac4a647bcdb19e918e8499, type: 3}
+      propertyPath: _playerCollect
+      value: 
+      objectReference: {fileID: 163635214}
     - target: {fileID: 9171880268724604729, guid: 1fe0a7afb1ac4a647bcdb19e918e8499, type: 3}
       propertyPath: _memoryZone
       value: 

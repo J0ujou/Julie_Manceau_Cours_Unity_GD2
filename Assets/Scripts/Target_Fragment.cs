@@ -53,22 +53,26 @@ public class Target_Fragment : MonoBehaviour
     //TODO: Timer by deltatime
     private void Update()
     {
-       if (_playerCollect.gameStarted && !HasDoOnce)
+       if (_playerCollect.gameStarted)
        {
-               StartCoroutine(ShadowTimerControl());
+			if(!HasDoOnce)
+            {
+				StartCoroutine(ShadowTimerControl());
+			}
+               
+       		if (_memoryZone.nbenter >=1)
+       			{
+           			if (_memoryZone.zone == true)
+           			{
+               			Hide(true);
+           			}
+           			else
+           			{
+               			Hide(false);
+           			}
+				}
        }
-       
-       if (_memoryZone.nbenter >=1)
-       {
-           if (_memoryZone.zone == true)
-           {
-               Hide(true);
-           }
-           else
-           {
-               Hide(false);
-           }
-       }
+		
        
        //if (_memoryZone.outofzone== true)
        //{
@@ -88,5 +92,6 @@ public class Target_Fragment : MonoBehaviour
             HasDoOnce = true;
         }
     }
-    
+
+	
 }

@@ -57,5 +57,9 @@ public class Player_Collect : MonoBehaviour
         }
       }
     }
+	else
+	{
+		timer= 60f;
+	}
   }
 }

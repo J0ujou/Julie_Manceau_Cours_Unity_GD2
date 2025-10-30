@@ -1508,7 +1508,8 @@ MonoBehaviour:
   _scoreText: {fileID: 8073230816613165681}
   _timerText: {fileID: 6502455750000008864}
   _keyText: {fileID: 4844160423820147128}
-  _playerCollect: {fileID: 0}
+  _playerCollect: {fileID: 9171880268724604729, guid: 1fe0a7afb1ac4a647bcdb19e918e8499, type: 3}
+  musicSource: {fileID: 2389561805410680357, guid: 990c208c4e8674b2481db33aa681035d, type: 3}
   VictoryPanel: {fileID: 3236686822449095274}
   DefeatPanel: {fileID: 8433911841943279582}
   StartPanel: {fileID: 2620877162752000794}
@@ -2524,19 +2525,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3235842686084483734}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: ClickStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8300000, guid: 1017d71dea5564e3f856222e0aca34e7, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-        m_MethodName: 
+        m_MethodName: ResetGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
