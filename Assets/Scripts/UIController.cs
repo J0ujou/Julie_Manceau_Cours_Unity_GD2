@@ -34,6 +34,14 @@ public class UIController : MonoBehaviour
         UpdateScore(0);
         VictoryPanel.SetActive(false);
         DefeatPanel.SetActive(false);
+        if (SceneManager.GetActiveScene().name == "Level_2")
+        {
+            Debug.Log("Level 2");
+            _playerCollect.gameStarted= true;
+            StartPanel.SetActive(false);
+            musicSource.PlayGameMusic();
+            // play game music ne marche pas
+        }
     }
 
     public void UpdateScore(int newScore)
@@ -73,7 +81,14 @@ public class UIController : MonoBehaviour
 	
 	public void ResetGame()
     {
-        SceneManager.LoadScene("Level_1");
+        if (SceneManager.GetActiveScene().name == "Level_2")
+        {
+            SceneManager.LoadScene("Level_2");  
+        }
+        else
+        {
+            SceneManager.LoadScene("Level_1");  
+        }
     }
     
     public void QuitGame()

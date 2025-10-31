@@ -46,8 +46,8 @@ Camera:
   m_GameObject: {fileID: 4172523582870378821}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -156,17 +156,17 @@ MonoBehaviour:
   sfxSource: {fileID: 6386686276320018338}
   _menuMusic: {fileID: 8300000, guid: 9ac69b75d4b844229a9f230b22e0c9f0, type: 3}
   _gameMusic: {fileID: 8300000, guid: f0480556690844eb48aa5dffd0fc0d56, type: 3}
-  _gameOverMusic: {fileID: 0}
-  _victoryMusic: {fileID: 0}
+  _gameOverMusic: {fileID: 8300000, guid: dd0e930243cee409aba74163f68620df, type: 3}
+  _victoryMusic: {fileID: 8300000, guid: 1e36d4455203c42a2b82b93015330330, type: 3}
   hoverSound: {fileID: 8300000, guid: 98d804a7bf300496abf090577c4680ec, type: 3}
   clickSound: {fileID: 8300000, guid: 1017d71dea5564e3f856222e0aca34e7, type: 3}
-  PickupFragmentSound: {fileID: 0}
-  BonusSound: {fileID: 0}
-  MalusSound: {fileID: 0}
-  PoisonZoneSound: {fileID: 0}
-  MemoryZoneSound: {fileID: 0}
-  JumpSound: {fileID: 0}
-  PickupKeySound: {fileID: 0}
+  PickupFragmentSound: {fileID: 8300000, guid: 9b2dbb193f0db4b49986ec8d5eb7d1a2, type: 3}
+  BonusSound: {fileID: 8300000, guid: e8cf64a6de7c745e5b1378d83dcfe5f5, type: 3}
+  MalusSound: {fileID: 8300000, guid: 409f5f39c126c41019a6a2a7dadfd434, type: 3}
+  PoisonZoneSound: {fileID: 8300000, guid: f08358b8b37a445309c4a466e4d23ace, type: 3}
+  MemoryZoneSound: {fileID: 8300000, guid: b8fefec887fb742a391d456133b8af25, type: 3}
+  JumpSound: {fileID: 8300000, guid: 263aa86e6c7a14c0a920687a8a8ccce4, type: 3}
+  PickupKeySound: {fileID: 8300000, guid: 3e82986b7321947489586e5c9644fa1e, type: 3}
 --- !u!82 &5270642907096193954
 AudioSource:
   m_ObjectHideFlags: 0
