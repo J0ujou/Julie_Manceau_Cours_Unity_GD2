@@ -5,11 +5,12 @@ using UnityEngine;
 public class Target_Fragment : MonoBehaviour
 { 
     [SerializeField] private int _targetValue = 1;
-    [SerializeField] private float _shadowDuration = 5f;
+    [SerializeField] private float _shadowDuration = 10f;
     [SerializeField] private GameObject _particuleEffect;
     [SerializeField] private Player_Collect _playerCollect;
     [SerializeField] Memory_Zone _memoryZone;
     [SerializeField] MusicManager sfxSource;
+	[SerializeField] private UIController _uiController;
     private bool HasDoOnce = false;
 
 	void Start()
@@ -55,6 +56,7 @@ public class Target_Fragment : MonoBehaviour
 			if(!HasDoOnce)
             {
 				StartCoroutine(ShadowTimerControl());
+				_uiController.ShowGoal();//a voir car va surement s'afficher à chaque debut de chaque partie.
 			}
                
        		if (_memoryZone.nbenter >=1)
@@ -87,6 +89,7 @@ public class Target_Fragment : MonoBehaviour
         if (!HasDoOnce)
         {
             Hide(false);
+			_uiController.HideGoal();
             HasDoOnce = true;
         }
     }

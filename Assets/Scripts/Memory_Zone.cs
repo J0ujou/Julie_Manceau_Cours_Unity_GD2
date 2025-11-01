@@ -6,6 +6,7 @@ public class Memory_Zone : MonoBehaviour
 {
     //[SerializeField] private Target_Fragment[] _targetFragment;
 	[SerializeField] MusicManager sfxSource;
+	[SerializeField] UIController uiController;
     public bool keycollected = false;
     public bool zone = false;
 	private float Timer =5f;
@@ -32,6 +33,11 @@ public class Memory_Zone : MonoBehaviour
 		    Debug.Log("ZONE");
 		    outofzone = false;
 		    sfxSource.PlayMemoryZoneSound();
+			if (nbenter <=1)
+			{
+				uiController.ShowTutoMemory();
+				uiController.HideTutoKey();
+			}
 		    Target_Fragment[] fragments = FindObjectsOfType<Target_Fragment>();
 		    foreach (var f in fragments)
 		    {
@@ -41,6 +47,7 @@ public class Memory_Zone : MonoBehaviour
 			    }
 
 		    }
+			
 	    }
     }
 	
@@ -58,6 +65,10 @@ public class Memory_Zone : MonoBehaviour
 					f.Hide(false);
 				}
 
+			}
+			if (nbenter <=1)
+			{
+				uiController.HideTutoMemory();
 			}
 		}
 	}

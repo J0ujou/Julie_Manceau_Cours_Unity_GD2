@@ -121,5 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da04d8a53a2274c48817e179d38b3c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetFragment: {fileID: 1017798234618557493, guid: ba174e3e3b506714eb06c1d6f5822ecf, type: 3}
+  sfxSource: {fileID: 0}
+  uiController: {fileID: 3235842686084483734, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
   keycollected: 0
+  zone: 0
+  nbenter: 0
+  outofzone: 0

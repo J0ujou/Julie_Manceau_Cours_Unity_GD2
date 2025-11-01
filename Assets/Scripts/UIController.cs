@@ -13,6 +13,9 @@ public class UIController : MonoBehaviour
     public GameObject VictoryPanel2;
     public GameObject DefeatPanel;
     public GameObject StartPanel;
+	public GameObject GoalPanel;
+	public GameObject TutoKeyPanel;
+	public GameObject TutoMemoryPanel;
 
     // Fonction appelé à chaque activation du monobehaviour
     private void OnEnable()
@@ -37,6 +40,9 @@ public class UIController : MonoBehaviour
         VictoryPanel.SetActive(false);
         VictoryPanel2.SetActive(false);
         DefeatPanel.SetActive(false);
+		HideGoal();
+		HideTutoMemory();
+		HideTutoKey();
         if (SceneManager.GetActiveScene().name == "Level_2")
         {
             Debug.Log("Level 2");
@@ -126,4 +132,34 @@ public class UIController : MonoBehaviour
     {
         SceneManager.LoadScene("Level_1");  
     }
+
+	public void ShowGoal()
+	{
+		GoalPanel.SetActive(true);
+	}
+
+	public void ShowTutoKey()
+	{
+		TutoKeyPanel.SetActive(true);
+	}
+
+	public void ShowTutoMemory()
+	{
+		TutoMemoryPanel.SetActive(true);
+	}
+
+	public void HideGoal()
+	{
+		GoalPanel.SetActive(false);
+	}
+
+	public void HideTutoKey()
+	{
+		TutoKeyPanel.SetActive(false);
+	}
+
+	public void HideTutoMemory()
+	{
+		TutoMemoryPanel.SetActive(false);
+	}
 }    
