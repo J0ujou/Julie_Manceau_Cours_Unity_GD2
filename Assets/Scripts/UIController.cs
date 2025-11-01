@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Player_Collect _playerCollect;
     [SerializeField] MusicManager musicSource;
     public GameObject VictoryPanel;
+    public GameObject VictoryPanel2;
     public GameObject DefeatPanel;
     public GameObject StartPanel;
 
@@ -32,15 +33,17 @@ public class UIController : MonoBehaviour
     {
         UpdateScorekey(0);
         UpdateScore(0);
+        musicSource.PlayMenuMusic();
         VictoryPanel.SetActive(false);
+        VictoryPanel2.SetActive(false);
         DefeatPanel.SetActive(false);
         if (SceneManager.GetActiveScene().name == "Level_2")
         {
             Debug.Log("Level 2");
+            musicSource.PlayGameMusic();
             _playerCollect.gameStarted= true;
             StartPanel.SetActive(false);
-            musicSource.PlayGameMusic();
-            // play game music ne marche pas
+            
         }
     }
 
@@ -63,9 +66,17 @@ public class UIController : MonoBehaviour
 
     public void ShowVictory()
     {
-        VictoryPanel.SetActive(true);
-        //TO DO: bloquer les mouvements du joueur
-        musicSource.PlayVictoryMusic();
+        if (SceneManager.GetActiveScene().name == "Level_2")
+        {
+            VictoryPanel2.SetActive(true);
+            musicSource.PlayVictoryMusic(); 
+        }
+        else
+        {
+            VictoryPanel.SetActive(true);
+            musicSource.PlayVictoryMusic(); 
+        }
+        
     }
 
     public void ClickStart()
@@ -75,6 +86,7 @@ public class UIController : MonoBehaviour
         musicSource.PlayGameMusic();
         StartPanel.SetActive(false);
         DefeatPanel.SetActive(false);
+        VictoryPanel2.SetActive(false);
         _playerCollect.gameStarted = true;
         Debug.Log("game started");
     }
@@ -110,5 +122,8 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene("Level_2");
     }
 
-   
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("Level_1");  
+    }
 }    

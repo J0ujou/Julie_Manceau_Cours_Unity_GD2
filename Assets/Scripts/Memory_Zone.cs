@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Memory_Zone : MonoBehaviour
 {
-    [SerializeField] private Target_Fragment[] _targetFragment;
+    //[SerializeField] private Target_Fragment[] _targetFragment;
 	[SerializeField] MusicManager sfxSource;
     public bool keycollected = false;
     public bool zone = false;
@@ -25,23 +25,23 @@ public class Memory_Zone : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Player_Collect>()!= null && keycollected == true)
-        {
-			zone = true;
-			nbenter = nbenter + 1;
-			Debug.Log("ZONE");
-			outofzone= false;
-			sfxSource.PlayMemoryZoneSound();
-            //Target_Fragment[] _targetFragment = FindObjectsOfType<Target_Fragment>();
-            //foreach (var _targetFragment in _targetFragment)
-            //{
-                
-                //_targetFragment.Hide(true);
-                
-            //}
+	    if (other.gameObject.GetComponent<Player_Collect>() != null && keycollected == true)
+	    {
+		    zone = true;
+		    nbenter = nbenter + 1;
+		    Debug.Log("ZONE");
+		    outofzone = false;
+		    sfxSource.PlayMemoryZoneSound();
+		    Target_Fragment[] fragments = FindObjectsOfType<Target_Fragment>();
+		    foreach (var f in fragments)
+		    {
+			    if (f != null)
+			    {
+				    f.Hide(true);
+			    }
 
-            //_targetFragment.ShadowTimerControl();
-        }
+		    }
+	    }
     }
 	
 	void OnTriggerExit(Collider other)
@@ -50,6 +50,15 @@ public class Memory_Zone : MonoBehaviour
 		{
 			zone= false;
 			outofzone = true;
+			Target_Fragment[] fragments = FindObjectsOfType<Target_Fragment>();
+			foreach (var f in fragments)
+			{
+				if (f != null)
+				{
+					f.Hide(false);
+				}
+
+			}
 		}
 	}
 }   

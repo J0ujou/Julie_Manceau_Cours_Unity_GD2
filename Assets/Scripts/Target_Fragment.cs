@@ -10,10 +10,7 @@ public class Target_Fragment : MonoBehaviour
     [SerializeField] private Player_Collect _playerCollect;
     [SerializeField] Memory_Zone _memoryZone;
     [SerializeField] MusicManager sfxSource;
-    private float _shadowTimer = 5f;
-    private bool _isInShadows = false;
     private bool HasDoOnce = false;
-    private bool HasDoOnce2 = false;
 
 	void Start()
 	{
@@ -64,11 +61,12 @@ public class Target_Fragment : MonoBehaviour
        			{
            			if (_memoryZone.zone == true)
            			{
-               			Hide(true);
+               			//Hide(true);
+		                
            			}
            			else
            			{
-               			Hide(false);
+               			//Hide(false);
            			}
 				}
        }

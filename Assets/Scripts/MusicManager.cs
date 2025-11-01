@@ -16,15 +16,13 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioClip MemoryZoneSound;
     [SerializeField] private AudioClip JumpSound;
     [SerializeField] private AudioClip PickupKeySound;
-    
 
-    private void Start()
+
+    public void PlayMenuMusic()
     {
-        if (musicSource != null && _menuMusic != null)
-        {
-            musicSource.clip = _menuMusic;
-            musicSource.Play();
-        }
+        musicSource.Stop();
+        musicSource.clip = _menuMusic;
+        musicSource.Play();
     }
 
     public void PlayGameMusic()
