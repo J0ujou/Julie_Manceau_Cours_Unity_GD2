@@ -53,5 +53,55 @@ Compte-rendu par jour:
 - il doit permettre l'utilisation de la zone bénéfique, alors je l'ai créer, il faut faire la fin du code (j'ai juste fait les conditions)
 - j'ai créé la défaite environnementale (manque fin script)
 - je n'ai pas encore réglé le probleme d'apparition du bonus fonctionnel après récupération du fragment (manque de temps) --> voir à prochaine session
- 
+
+ ///////_26/10_///////
+ - j'ai essayé de faire le système de memoryzone mais je n'y arrive pas, je comprend la logique mais je n'arrive pas à correctement l'appliquer en code
+ - j'ai voulu essayer une solution trouvée sur internet mais elle ne fonctionnait pas.
+ - j'ai tout de même réussi à lier la clef avec la memoryzone.
+ - j'ai terminée la zone poison en affichant game over si je la touche
+ - j'ai réussi l'apparition des bonus qui fonctionne avec une nouvelle commande. Au start j'initialise la ref playermovement en récupérant le premier objet de type player movement. ( _playerMovement = Object.FindFirstObjectByType<PlayerMovement>();) j'ai appris que c'était l'équivalent du get actor of class de unity. J'ai essayé de trouver une autre solution pour régler ce problème mais avec le temps limité j'ai dû laisser cette option.)
+
+ ///////_27/10_///////
+ - j'ai réfléchi sur papier aux 2 différents level designs pour les deux niveaux du jeu.
+ - j'ai cherché différents sons pour le jeu (musiques, sons contextuels...)
+ - j'ai importé les sons sur le projet
+ - j'ai modifié le nom des deux map
+
+///////_28/10_///////
+- j'ai essayé d'ajouter les sons mais cela ne fonctionnait pas
+
+///////_29/10_///////
+- Je suis retourné sur la memory zone et j'ai essayé de tester une autre technique: j'ai fais un update puis j'ai demandé si le joueur avait la clef et qu'il était dans la zone, si oui, les fragments s'affiche
+- Cette technique a des limites car l'update donne beaucoup trop de fois l'ordre en peu de temps ce qui stoppe le fonctionnement au bout de plusieurs utilisations
+- j'ai réussi à associer chaque action à un son et à mettre les musiques de fond.
+
+///////_30/10_///////
+- j'ai copié collé le niveau 1 pour faire le 2
+- j'ai stoppé les mouvements du joueurs avant qu'il ne commence à joueur et quand il arrete de jouer (victoire et game over)
+- le bouton restart reset le jeu au début (niveau1)
+
+///////_31/10_///////
+- j'ai changer le fond du jeu pour ajouter de l'esthétique (à voir pour le changer car image test)
+-  j'ai ajusté la caméra pour qu'on puisse voir une vue d'ensemble du jeu (caméra fixe)
+-  j'ai fait le level design des deux niveaux
+-  j'ai ajusté le saut pour que le joueur ne saute pas trop haut
+-  j'ai ajusté la taille des collectibles pour que le joueur soit obligé de les récupérer
+-  j'ai ajusté quelques widgets pour le niveau 2 (restart, victory...)
+
+//////_01/11_///////
+- j'ai changé le code de la memory zone et il marche sans bug
+- par contre c'est avec un find object by type
+- je récupère dans une liste tous mes fragments puis lorsque la memoryzone capte en trigger le joueur qui a la clef, alors il montre tous les fragments de la liste
+- le soucis c'est qu'il affiche même ceux qui ont récupéré (avec le temps limité je laisse cette problématique de côté pour terminer le projet)
+- j'ai importé des images pour un nouveau fond de partie, pour le fond de mes widgets et de certains boutons
+- j'ai créer des widgets tuto que j'ai codé pour qu'ils s'affichent au bon moment (but du jeu, clef et memory zone)
+- j'ai commencé a créer un panel audio settings que j'ai caché. Le temps qu'il reste avant le rendu du projet m'oblige à laisser ce bonus de coté pour privilégier l'aspect esthétique et équilibrage de mon jeu qui n'est pas terminé.
+- je n'ai pas pu faire l'esthétique des widgets
+
+//////_02/11_///////
+- j'ai fait l'esthétique de mes widgets car la conversion en sprite des images a enfin fonctionnée.
+- j'ai changé quelques boutons mais je doit modifier leur taille
+- j'ai changé la couleurs de tous les éléments de mon jeu pour les assortir avec mon HUD.
+- Par manque de temps, je risque de laisser les éléments seulement coloré, même si mon projet de base était d'ajouter des assets et des textures pour ajouter un peu plus de vie au jeu.
+- j'ai ajouté des images îcones pour expliquer les touches à utiliser pour les déplacements.
 Compte-rendu final: 
