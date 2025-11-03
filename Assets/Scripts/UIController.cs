@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Text _keyText;
     [SerializeField] private Player_Collect _playerCollect;
     [SerializeField] MusicManager musicSource;
+    [SerializeField] private ScoreDatas _scoreData;
     public GameObject VictoryPanel;
     public GameObject VictoryPanel2;
     public GameObject DefeatPanel;
@@ -36,6 +37,8 @@ public class UIController : MonoBehaviour
     {
         UpdateScorekey(0);
         UpdateScore(0);
+        _scoreData.NbKey = 0;
+        _scoreData.ScoreValue = 0;
         musicSource.PlayMenuMusic();
         VictoryPanel.SetActive(false);
         VictoryPanel2.SetActive(false);
@@ -55,7 +58,7 @@ public class UIController : MonoBehaviour
 
     public void UpdateScore(int newScore)
     {
-        _scoreText.text = $"Objets : {newScore.ToString()} / 5";
+        _scoreText.text = $"Fragments : {newScore.ToString()} / 5";
     }
     
     public void UpdateScorekey(int newScore)
@@ -101,7 +104,7 @@ public class UIController : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Level_2")
         {
-            SceneManager.LoadScene("Level_2");  
+            SceneManager.LoadScene("Level_2");
         }
         else
         {

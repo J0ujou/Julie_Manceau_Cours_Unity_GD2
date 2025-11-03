@@ -7,7 +7,7 @@ public class Player_Collect : MonoBehaviour
   [SerializeField] private UIController _uiController;
   [SerializeField] Memory_Zone _memoryZone;
   public int maxScore = 5;
-  public float timer = 60f;
+  public float timer = 90f;
   public bool gameStarted=false;
   public bool victory = false;
   
@@ -24,7 +24,7 @@ public class Player_Collect : MonoBehaviour
     if (_scoreData.ScoreValue >= maxScore)
     {
       _uiController.ShowVictory();
-      victory = true;
+      victory = true; //sert à quoi??
     }
   }
 
@@ -34,10 +34,11 @@ public class Player_Collect : MonoBehaviour
     //_uiController.UpdateScore(_scoreData.ScoreValue);
     // Call event dispatcher, en C# on invoke avec l'input entre parenthèses
     OnkeyCollected?.Invoke(_scoreData.NbKey);
-    if (_scoreData.NbKey >= maxScore)
-    {
-      _memoryZone.keycollected = true;
-    }
+    //if (_scoreData.NbKey >= maxScore)
+    //{
+      //_memoryZone.keycollected = true;
+    //}
+    //sert à quoi??
   }
 
   private void Update()
@@ -49,7 +50,7 @@ public class Player_Collect : MonoBehaviour
 
       if (timer <= 0f)
       {
-        timer = 60f;
+        timer = 90f;
         gameStarted = false;
         if (victory==false)
         {
@@ -59,7 +60,7 @@ public class Player_Collect : MonoBehaviour
     }
 	else
 	{
-		timer= 60f;
+		timer= 90f;
 	}
   }
 }

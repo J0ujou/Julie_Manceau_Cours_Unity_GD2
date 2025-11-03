@@ -128,3 +128,4 @@ MonoBehaviour:
   _memoryZone: {fileID: 0}
   sfxSource: {fileID: 2389561805410680357, guid: 990c208c4e8674b2481db33aa681035d, type: 3}
   _uiController: {fileID: 3235842686084483734, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
+  _material: {fileID: 2100000, guid: 6e2c841a77b0805478fdb16635e6b7d6, type: 2}

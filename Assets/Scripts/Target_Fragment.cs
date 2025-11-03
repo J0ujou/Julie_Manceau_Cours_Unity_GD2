@@ -11,6 +11,7 @@ public class Target_Fragment : MonoBehaviour
     [SerializeField] Memory_Zone _memoryZone;
     [SerializeField] MusicManager sfxSource;
 	[SerializeField] private UIController _uiController;
+	[SerializeField] Material _material;
     private bool HasDoOnce = false;
 
 	void Start()
@@ -24,13 +25,8 @@ public class Target_Fragment : MonoBehaviour
         if (other.gameObject.GetComponent<Player_Collect>() != null)
         {
             other.gameObject.GetComponent<Player_Collect>().UpdateScore(_targetValue);
-            //Destroy(gameObject);
-            //TODO: Hide Target
             ToggleVisibility(false);
-            //TODO: Start Timer
-            //_isInShadows = true;
-            //Instantiate(_particuleEffect, transform.position, Quaternion.identity);
-         // StartCoroutine(ShadowTimerControl());
+            GetComponent<Renderer>().material = _material;
             sfxSource.PlayPickupFragmentSound();
 
         }
@@ -58,19 +54,19 @@ public class Target_Fragment : MonoBehaviour
 				StartCoroutine(ShadowTimerControl());
 				_uiController.ShowGoal();//a voir car va surement s'afficher à chaque debut de chaque partie.
 			}
-               
-       		if (_memoryZone.nbenter >=1)
-       			{
-           			if (_memoryZone.zone == true)
-           			{
+           // ancienne vesrion du fonctionnemment la zone memory//    
+       		//if (_memoryZone.nbenter >=1)
+       			//{
+           			//if (_memoryZone.zone == true)
+           			//{
                			//Hide(true);
 		                
-           			}
-           			else
-           			{
+           			//}
+           			//else
+           			//{
                			//Hide(false);
-           			}
-				}
+           			//}
+				//}
        }
 		
        

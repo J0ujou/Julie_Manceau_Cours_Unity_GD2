@@ -9,20 +9,22 @@ public class Memory_Zone : MonoBehaviour
 	[SerializeField] UIController uiController;
     public bool keycollected = false;
     public bool zone = false;
-	private float Timer =5f;
+	//private float Timer =5f;
     public int nbenter = 0;
 	public bool outofzone =false;
-    void Update()
-    {
-		if(zone==true)
-		{
-			Timer -= Time.deltaTime;
-			if (Timer<=0f)
-			{
-			zone= false;
-			}
-		}
-    }
+
+
+	//void Update()
+	//{
+		//if(zone==true)
+		//{
+			//Timer -= Time.deltaTime;
+			//if (Timer<=0f)
+			//{
+				//zone= false;
+			//}
+		//}
+	//}
 
     void OnTriggerEnter(Collider other)
     {
@@ -38,7 +40,7 @@ public class Memory_Zone : MonoBehaviour
 				uiController.ShowTutoMemory();
 				uiController.HideTutoKey();
 			}
-		    Target_Fragment[] fragments = FindObjectsOfType<Target_Fragment>();
+		    Target_Fragment[] fragments = FindObjectsByType<Target_Fragment>(FindObjectsSortMode.None);
 		    foreach (var f in fragments)
 		    {
 			    if (f != null)
@@ -57,7 +59,7 @@ public class Memory_Zone : MonoBehaviour
 		{
 			zone= false;
 			outofzone = true;
-			Target_Fragment[] fragments = FindObjectsOfType<Target_Fragment>();
+			Target_Fragment[] fragments = FindObjectsByType<Target_Fragment>(FindObjectsSortMode.None);
 			foreach (var f in fragments)
 			{
 				if (f != null)

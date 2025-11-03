@@ -58,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
                 _rb.AddForce(Vector3.up*250);
                 sfxSource.PlayJumpSound();
         }
-       
     }
 
     public void ActivateBonus(float duration = 5f)

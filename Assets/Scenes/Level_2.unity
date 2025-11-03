@@ -1168,31 +1168,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7910096545908473257, guid: c70805d1b9b8e38418b01e3f4ded7bd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.7595654
+      value: 11.23
       objectReference: {fileID: 0}
     - target: {fileID: 7910096545908473257, guid: c70805d1b9b8e38418b01e3f4ded7bd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.930683
+      value: -9.93
       objectReference: {fileID: 0}
     - target: {fileID: 7910096545908473257, guid: c70805d1b9b8e38418b01e3f4ded7bd7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.6580839
+      value: 3.19
       objectReference: {fileID: 0}
     - target: {fileID: 7910096545908473257, guid: c70805d1b9b8e38418b01e3f4ded7bd7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.29787213
       objectReference: {fileID: 0}
     - target: {fileID: 7910096545908473257, guid: c70805d1b9b8e38418b01e3f4ded7bd7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.29787213
       objectReference: {fileID: 0}
     - target: {fileID: 7910096545908473257, guid: c70805d1b9b8e38418b01e3f4ded7bd7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.64130515
       objectReference: {fileID: 0}
     - target: {fileID: 7910096545908473257, guid: c70805d1b9b8e38418b01e3f4ded7bd7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.641305
       objectReference: {fileID: 0}
     - target: {fileID: 7910096545908473257, guid: c70805d1b9b8e38418b01e3f4ded7bd7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1204,7 +1204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7910096545908473257, guid: c70805d1b9b8e38418b01e3f4ded7bd7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 130.172
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1607,6 +1607,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayClickSound
       objectReference: {fileID: 0}
+    - target: {fileID: 3235842686084483734, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
+      propertyPath: _memoryZone
+      value: 
+      objectReference: {fileID: 304448809}
     - target: {fileID: 3235842686084483734, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
       propertyPath: musicSource
       value: 
@@ -2165,6 +2169,14 @@ PrefabInstance:
       propertyPath: _memoryZone
       value: 
       objectReference: {fileID: 9099264731676642210, guid: e9ddb39be2353ae4fabeea30bb31e578, type: 3}
+    - target: {fileID: 1522853814792008077, guid: ff70e6e5617f36045b9b7975020082e1, type: 3}
+      propertyPath: uiController
+      value: 
+      objectReference: {fileID: 771334945}
+    - target: {fileID: 1522853814792008077, guid: ff70e6e5617f36045b9b7975020082e1, type: 3}
+      propertyPath: _particuleEffect
+      value: 
+      objectReference: {fileID: 586417320}
     - target: {fileID: 5721842368160989269, guid: ff70e6e5617f36045b9b7975020082e1, type: 3}
       propertyPath: m_Name
       value: Target_Key

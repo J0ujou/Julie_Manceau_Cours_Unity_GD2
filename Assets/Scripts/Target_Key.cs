@@ -7,8 +7,14 @@ public class Target_Key : MonoBehaviour
     [SerializeField] Memory_Zone _memoryZone;
     [SerializeField] MusicManager sfxSource;
     [SerializeField] UIController uiController;
+    [SerializeField] private GameObject _particuleEffect;
     private bool tutorial = false;
     private float timer = 3f;
+
+    void Awake()
+    {
+        _particuleEffect.SetActive(false);
+    }
     private void OnCollisionEnter(Collision other)
     {
       if (other.gameObject.GetComponent<Player_Collect>() != null)
@@ -20,6 +26,7 @@ public class Target_Key : MonoBehaviour
           sfxSource.PlayPickupKeySound();
           uiController.ShowTutoKey();
           tutorial = true;
+          _particuleEffect.SetActive(true);
       }
     }
 

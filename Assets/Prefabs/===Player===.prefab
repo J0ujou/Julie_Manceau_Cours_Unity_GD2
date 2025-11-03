@@ -172,7 +172,7 @@ MonoBehaviour:
   _uiController: {fileID: 0}
   _memoryZone: {fileID: 0}
   maxScore: 5
-  timer: 60
+  timer: 90
   gameStarted: 0
   victory: 0
 --- !u!82 &5706250782976169441
