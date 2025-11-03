@@ -1663,6 +1663,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4844160423820147128, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
+      propertyPath: m_margin.z
+      value: -248.57224
+      objectReference: {fileID: 0}
     - target: {fileID: 6331823107182070440, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1670,6 +1674,10 @@ PrefabInstance:
     - target: {fileID: 6331823107182070440, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayClickSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502455750000008864, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
+      propertyPath: m_margin.z
+      value: -243.04837
       objectReference: {fileID: 0}
     - target: {fileID: 7102110099235882803, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
       propertyPath: m_Pivot.x
@@ -1750,6 +1758,10 @@ PrefabInstance:
     - target: {fileID: 7102110099235882803, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073230816613165681, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
+      propertyPath: m_margin.z
+      value: -256.85794
       objectReference: {fileID: 0}
     - target: {fileID: 8744748091197884943, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
