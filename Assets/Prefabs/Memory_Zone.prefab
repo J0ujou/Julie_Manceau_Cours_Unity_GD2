@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 671565029507771221}
   - component: {fileID: 7005593641775587536}
   - component: {fileID: 9099264731676642210}
+  - component: {fileID: 5646582659793101243}
   m_Layer: 0
   m_Name: Memory_Zone
   m_TagString: Untagged
@@ -107,7 +108,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 3, z: 1}
+  m_Size: {x: 1, y: 20, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &9099264731676642210
 MonoBehaviour:
@@ -127,3 +128,15 @@ MonoBehaviour:
   zone: 0
   nbenter: 0
   outofzone: 0
+--- !u!114 &5646582659793101243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7297976548680122382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717ecfc0551333748acc7fcc16c9c6fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

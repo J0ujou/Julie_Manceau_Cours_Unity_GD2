@@ -25,8 +25,9 @@ public class Memory_Zone : MonoBehaviour
 			//}
 		//}
 	//}
+	
 
-    void OnTriggerEnter(Collider other)
+	void OnTriggerEnter(Collider other)
     {
 	    if (other.gameObject.GetComponent<Player_Collect>() != null && keycollected == true)
 	    {

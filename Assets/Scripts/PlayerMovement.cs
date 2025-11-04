@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody _rb;
-    [SerializeField] GameObject _ground;
     private float _horizontalMovement;
     private float _verticalMovement;
     private Vector3 _movement;
@@ -20,9 +19,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        //BonusScript = _targetBonus.GetComponent<Target_Bonus>();
-   
-
     }
 
     // Update is called once per frame
@@ -85,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (_ground)
+        if (other.gameObject.GetComponent<IsGround>() != null)
         {
             _isGrounded = true;
         }
@@ -93,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
-        if (_ground)
+        if (other.gameObject.GetComponent<IsGround>() != null)
         {
             _isGrounded = false;
         }

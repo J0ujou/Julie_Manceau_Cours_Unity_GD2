@@ -8,12 +8,15 @@ public class Target_Key : MonoBehaviour
     [SerializeField] MusicManager sfxSource;
     [SerializeField] UIController uiController;
     [SerializeField] private GameObject _particuleEffect;
-    private bool tutorial = false;
-    private float timer = 3f;
 
     void Awake()
     {
         _particuleEffect.SetActive(false);
+    }
+
+    void Start()
+    {
+        _memoryZone.keycollected = false;
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -25,23 +28,8 @@ public class Target_Key : MonoBehaviour
           Debug.Log("key collected");
           sfxSource.PlayPickupKeySound();
           uiController.ShowTutoKey();
-          tutorial = true;
           _particuleEffect.SetActive(true);
       }
-    }
-
-    void Update()
-    {//marche pas
-        if (tutorial)
-        {
-            timer = -Time.deltaTime;
-            Debug.Log(timer);
-            if (timer <= 0f)
-            {
-                uiController.HideTutoKey();
-                tutorial = false;
-            }
-        }
     }
 }
 
