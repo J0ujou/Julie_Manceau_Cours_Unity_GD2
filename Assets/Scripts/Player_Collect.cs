@@ -25,7 +25,7 @@ public class Player_Collect : MonoBehaviour
     if (_scoreData.ScoreValue >= maxScore)
     {
       _uiController.ShowVictory();
-      victory = true; //sert à quoi??
+      victory = true;
     }
   }
 
@@ -35,11 +35,6 @@ public class Player_Collect : MonoBehaviour
     //_uiController.UpdateScore(_scoreData.ScoreValue);
     // Call event dispatcher, en C# on invoke avec l'input entre parenthèses
     OnkeyCollected?.Invoke(_scoreData.NbKey);
-    //if (_scoreData.NbKey >= maxScore)
-    //{
-      //_memoryZone.keycollected = true;
-    //}
-    //sert à quoi??
   }
 
   private void Update()

@@ -3969,6 +3969,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2794981184763079952, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 330585549}
+    - target: {fileID: 2794981184763079952, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayClickSound
+      objectReference: {fileID: 0}
     - target: {fileID: 2816867294589476079, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
@@ -4104,6 +4112,14 @@ PrefabInstance:
     - target: {fileID: 4587295151177387390, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -163
+      objectReference: {fileID: 0}
+    - target: {fileID: 5003749914170573770, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 330585549}
+    - target: {fileID: 5003749914170573770, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayClickSound
       objectReference: {fileID: 0}
     - target: {fileID: 5009580802167026388, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
       propertyPath: m_IsActive

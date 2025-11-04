@@ -4,37 +4,20 @@ using System.Collections;
 
 public class Memory_Zone : MonoBehaviour
 {
-    //[SerializeField] private Target_Fragment[] _targetFragment;
 	[SerializeField] MusicManager sfxSource;
 	[SerializeField] UIController uiController;
     public bool keycollected = false;
-    public bool zone = false;
-	//private float Timer =5f;
+    //public bool zone = false;
     public int nbenter = 0;
-	public bool outofzone =false;
-
-
-	//void Update()
-	//{
-		//if(zone==true)
-		//{
-			//Timer -= Time.deltaTime;
-			//if (Timer<=0f)
-			//{
-				//zone= false;
-			//}
-		//}
-	//}
 	
-
 	void OnTriggerEnter(Collider other)
     {
 	    if (other.gameObject.GetComponent<Player_Collect>() != null && keycollected == true)
 	    {
-		    zone = true;
+		    //zone = true;
 		    nbenter = nbenter + 1;
+		    Debug.Log(nbenter);
 		    Debug.Log("ZONE");
-		    outofzone = false;
 		    sfxSource.PlayMemoryZoneSound();
 			if (nbenter <=1)
 			{
@@ -58,8 +41,7 @@ public class Memory_Zone : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Player_Collect>()!= null && keycollected == true)
 		{
-			zone= false;
-			outofzone = true;
+			//zone= false;
 			Target_Fragment[] fragments = FindObjectsByType<Target_Fragment>(FindObjectsSortMode.None);
 			foreach (var f in fragments)
 			{

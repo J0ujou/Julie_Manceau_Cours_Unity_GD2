@@ -23,6 +23,7 @@ public class MusicManager : MonoBehaviour
         musicSource.Stop();
         musicSource.clip = _menuMusic;
         musicSource.Play();
+        musicSource.volume = 0.05f;
     }
 
     public void PlayGameMusic()
@@ -51,6 +52,7 @@ public class MusicManager : MonoBehaviour
     {
         musicSource.Stop();
         musicSource.PlayOneShot(_victoryMusic);
+        musicSource.volume = 1f;
     }
     public void PlayPickupFragmentSound()
     {
@@ -61,6 +63,7 @@ public class MusicManager : MonoBehaviour
     {
         sfxSource.clip= BonusSound;
         sfxSource.Play();
+        sfxSource.volume = 0.2f;
     }
     public void PlayMalusSound()
     {
@@ -81,10 +84,12 @@ public class MusicManager : MonoBehaviour
     {
         sfxSource.clip= JumpSound;
         sfxSource.Play();
+        sfxSource.volume = 0.2f;
     }
     public void PlayPickupKeySound()
     {
         sfxSource.clip= PickupKeySound;
         sfxSource.Play();
+        sfxSource.volume = 0.2f;
     }
 }

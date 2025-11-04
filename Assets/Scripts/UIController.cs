@@ -46,7 +46,7 @@ public class UIController : MonoBehaviour
 		HideGoal();
 		HideTutoMemory();
 		HideTutoKey();
-        if (SceneManager.GetActiveScene().name == "Level_2")
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             Debug.Log("Level 2");
             musicSource.PlayGameMusic();
@@ -75,7 +75,7 @@ public class UIController : MonoBehaviour
 
     public void ShowVictory()
     {
-        if (SceneManager.GetActiveScene().name == "Level_2")
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             VictoryPanel2.SetActive(true);
             musicSource.PlayVictoryMusic(); 
@@ -99,18 +99,7 @@ public class UIController : MonoBehaviour
         _playerCollect.gameStarted = true;
         Debug.Log("game started");
     }
-	
-	public void ResetGame()
-    {
-        if (SceneManager.GetActiveScene().name == "Level_2")
-        {
-            SceneManager.LoadScene("Level_2");
-        }
-        else
-        {
-            SceneManager.LoadScene("Level_1");  
-        }
-    }
+    
     
     public void QuitGame()
     {
@@ -122,18 +111,7 @@ public class UIController : MonoBehaviour
     {
         DefeatPanel.SetActive(true);
         _playerCollect.gameStarted = false;
-        //TO DO: Bloquer les mouvements du joueur
         musicSource.PlayGameOverMusic();
-    }
-
-	public void NextLevel()
-	{
-        SceneManager.LoadScene("Level_2");
-    }
-
-    public void ReturnToMenu()
-    {
-        SceneManager.LoadScene("Level_1");  
     }
 
 	public void ShowGoal()

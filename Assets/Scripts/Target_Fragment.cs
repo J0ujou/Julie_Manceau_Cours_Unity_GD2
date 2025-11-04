@@ -44,7 +44,6 @@ public class Target_Fragment : MonoBehaviour
         Debug.Log("hide");
     }
     
-    //TODO: Timer by deltatime
     private void Update()
     {
        if (_playerCollect.gameStarted)
@@ -52,33 +51,14 @@ public class Target_Fragment : MonoBehaviour
 			if(!HasDoOnce)
             {
 				StartCoroutine(ShadowTimerControl());
-				_uiController.ShowGoal();//a voir car va surement s'afficher à chaque debut de chaque partie.
+				_uiController.ShowGoal();
 			}
-           // ancienne vesrion du fonctionnemment la zone memory//    
-       		//if (_memoryZone.nbenter >=1)
-       			//{
-           			//if (_memoryZone.zone == true)
-           			//{
-               			//Hide(true);
-		                
-           			//}
-           			//else
-           			//{
-               			//Hide(false);
-           			//}
-				//}
+         
        }
-		
-       
-       //if (_memoryZone.outofzone== true)
-       //{
-           //Hide(false);
-       //}
        
     }
     
     
-    //TODO: timer by coroutine
     public IEnumerator ShadowTimerControl()
     {
         yield return new WaitForSeconds(_shadowDuration);

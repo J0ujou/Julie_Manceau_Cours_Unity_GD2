@@ -27,8 +27,12 @@ public class Target_Key : MonoBehaviour
           _memoryZone.keycollected = true;
           Debug.Log("key collected");
           sfxSource.PlayPickupKeySound();
-          uiController.ShowTutoKey();
           _particuleEffect.SetActive(true);
+          Debug.Log(_memoryZone.nbenter);
+          if (_memoryZone.nbenter == 0)
+          {
+              uiController.ShowTutoKey();
+          }
       }
     }
 }
