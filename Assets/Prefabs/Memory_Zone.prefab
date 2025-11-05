@@ -125,9 +125,7 @@ MonoBehaviour:
   sfxSource: {fileID: 0}
   uiController: {fileID: 3235842686084483734, guid: 2da0a4d8cf4ccce4bb59542379b304ba, type: 3}
   keycollected: 0
-  zone: 0
   nbenter: 0
-  outofzone: 0
 --- !u!114 &5646582659793101243
 MonoBehaviour:
   m_ObjectHideFlags: 0

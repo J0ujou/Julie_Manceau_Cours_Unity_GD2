@@ -69,7 +69,7 @@ public class UIController : MonoBehaviour
     public void UpdateTimer(float newTimer)
     {
         int minutes = Mathf.FloorToInt(_playerCollect.timer / 60);
-        int seconds = Mathf.FloorToInt(_playerCollect.timer % 61);
+        int seconds = Mathf.FloorToInt(_playerCollect.timer % 60);
         _timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
@@ -78,12 +78,15 @@ public class UIController : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             VictoryPanel2.SetActive(true);
-            musicSource.PlayVictoryMusic(); 
+            musicSource.PlayVictoryMusic();
+            _playerCollect.gameStarted = false;
+            HideTutoKey();
         }
         else
         {
             VictoryPanel.SetActive(true);
             musicSource.PlayVictoryMusic(); 
+            _playerCollect.gameStarted = false;
         }
         
     }

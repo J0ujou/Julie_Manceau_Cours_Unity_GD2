@@ -54,6 +54,7 @@ public class Memory_Zone : MonoBehaviour
 			if (nbenter <=1)
 			{
 				uiController.HideTutoMemory();
+				uiController.HideTutoKey();
 			}
 		}
 	}
